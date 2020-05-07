@@ -9,7 +9,7 @@ scripts:
     - docker run -e CI=true lcymburajr/react-test npm test
 
 after_success:
-    - docker build -t DOCKER_ID/multi-client ./client
+    - docker build -t lcymburajr/multi-client ./client
     - docker build -t lcymburajr/multi-nginx ./nginx
     - docker build -t lcymburajr/multi-server ./server
     - docker build -t lcymburajr/multi-worker ./worker
