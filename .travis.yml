@@ -22,11 +22,10 @@ after_success:
     - docker push $DOCKER_ID/multi-worker
 
 deploy:
-    edge: true
     provider: elasticbeanstalk
     region: 'us-east-1'
     app: 'multi-docker'
-    env: 'MultiDocker-env'
+    env: 'MultiDocker-env-1'
     bucket_name: 'elasticbeanstalk-us-east-1-522309878767'
     bucket_path: 'multi-docker'
     on:
