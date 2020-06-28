@@ -1,0 +1,13 @@
+sudo: required
+# Require Travis to use Docker
+services:
+    - docker
+before_install:
+    # This is for travis to use the encrypted file
+    - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
+    # Download and install Google Cloud CLI
+    - curl https://sdk.cloud.google.com | bash > /dev/null;
+    - source $HOME/google-cloud-sdk/path.bash.inc
+    - gcloud components update kubectl
+    # Add auth tokens with CLI
+    - gcloud auth activate-servies-account --key-file service-account.json
