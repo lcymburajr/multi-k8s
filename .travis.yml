@@ -18,7 +18,7 @@ before_install:
     # Setup google cloud config and cluster to use
     - gcloud config set project multi-k8s-281515
     - gcloud config set compute/zone us-east1-b
-    - gcloud containers clusters get-credentials multi-cluster
+    - gcloud container clusters get-credentials multi-cluster
     # Login to docker hub
     - echo $DOCKER_PW | docker login -u $DOCKER_ID --password-stdin
     # Build container for testing app
