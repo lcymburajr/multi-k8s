@@ -1,6 +1,6 @@
-docker build -t $DOCKER_ID/multi-client:latest -t $DOCKER_ID/multi-client:$SHA ./client/Dockerfile ./client
-docker build -t $DOCKER_ID/multi-server:latest -t $DOCKER_ID/multi-server:$SHA ./server/Dockerfile /server
-docker build -t $DOCKER_ID/multi-worker:latest -t $DOCKER_ID/multi-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t $DOCKER_ID/multi-client:latest -t $DOCKER_ID/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t $DOCKER_ID/multi-server:latest -t $DOCKER_ID/multi-server:$SHA -f ./server/Dockerfile /server
+docker build -t $DOCKER_ID/multi-worker:latest -t $DOCKER_ID/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push $DOCKER_ID/multi-client:latest
 docker push $DOCKER_ID/multi-server:latest
