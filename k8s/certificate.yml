@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1alpha2
-kind: Certification
+kind: Certificate
 metadata:
     name: lawrencecymbura-com-tls
 spec:
