@@ -7,14 +7,14 @@ spec:
     issuerRef:
         name: letsencrypt-prod
         kind: ClusterIssuer
-        commonName: lawrencecymbura.com
-        dnsNames:
-            - lawrencecymbura.com
-            - www.lawrencecymbura.com
-        acme:
-            config:
-                - http01:
-                      ingressClass: nginx
-                  domains:
-                      - lawrencecymbura.com
-                      - www.lawrencecymbura.com
+    commonName: lawrencecymbura.com
+    dnsNames:
+        - lawrencecymbura.com
+        - www.lawrencecymbura.com
+    acme:
+        config:
+            - http01:
+                  ingressClass: nginx
+              domains:
+                  - lawrencecymbura.com
+                  - www.lawrencecymbura.com
